@@ -16,7 +16,8 @@ let myTeam = [];
 // used to validate ids in an object
 const uniqueId = {};
 
-var manager = [{
+// manager template
+const manager = [{
     type: "input",
     name: "managerName",
     message: "Enter the managers name here.",
@@ -30,10 +31,73 @@ var manager = [{
 },
 {
     type: "input",
-    name: ""
+    name: "managerEmail",
+    message: "Enter the managers email here.",
+    validate: validEmail
+},
+{
+    type: "input",
+    name: "managerOffice",
+    message: "Enter the managers office number here",
+    validate: Empty
 }
-    
-]
+];
+
+// engineer template
+const engineer = [{
+    type: "input",
+    name: "engineerName",
+    message: "Enter the engineers name here.",
+    validate: Empty
+},
+{
+    type: "input",
+    name: "engineerUniqueId",
+    message: "Enter the engineers unique id here.",
+    validate: validUniqueId
+},
+{
+    type: "input",
+    name: "engineerEmail",
+    message: "Enter the engineers email here.",
+    validate: validEmail
+},
+{
+    type: "input",
+    name: "engineerGit",
+    message: "Enter the engineers GitHub username here",
+    validate: validGit
+}
+];
+
+// intern template
+const intern = [{
+    type: "input",
+    name: "internName",
+    message: "Enter the interns name here.",
+    validate: Empty
+},
+{
+    type: "input",
+    name: "internUniqueId",
+    message: "Enter the interns unique id here.",
+    validate: validUniqueId
+},
+{
+    type: "input",
+    name: "internEmail",
+    message: "Enter the interns email here.",
+    validate: validEmail
+},
+{
+    type: "input",
+    name: "internSchool",
+    message: "Enter the name of the school the intern is attending.",
+    validate: Empty
+}
+];
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
